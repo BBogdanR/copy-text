@@ -3,48 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Копирование…</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
-    .box { max-width: 720px; margin: 0 auto; }
-    pre { background:#111827; color:#e5e7eb; padding:12px; border-radius:8px; overflow:auto; }
-  </style>
+  <meta name="color-scheme" content="light dark" />
+  <title>Копирование текста</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="box">
-    <h1>Копирование текста</h1>
-    <p id="status">Идёт копирование в буфер обмена…</p>
-    <pre id="preview"></pre>
-    <p>Если копирование не сработало автоматически, выделите текст выше и скопируйте вручную.</p>
-  </div>
-  <script>
-    function fromBase64Url(b64url) {
-      const b64 = b64url.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((b64url.length + 3) % 4);
-      try {
-        return decodeURIComponent(escape(atob(b64)));
-      } catch {
-        // Fallback для Unicode
-        const bin = atob(b64);
-        const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
-        return new TextDecoder().decode(bytes);
-      }
-    }
-    async function main() {
-      const hash = location.hash.startsWith('#') ? location.hash.slice(1) : '';
-      const text = hash ? fromBase64Url(hash) : '';
-      const status = document.getElementById('status');
-      const preview = document.getElementById('preview');
-      preview.textContent = text || '(пусто)';
+  <main class="wrap">
+    <section class="card" role="region" aria-labelledby="title">
+      <header class="card__header">
+        <h1 id="title" class="title">Сообщение</h1>
+        <p class="subtitle">Эта страница автоматически копирует <strong>только текст ниже</strong>.</p>
+      </header>
 
-      try {
-        await navigator.clipboard.writeText(text);
-        status.textContent = 'Скопировано в буфер обмена ✔';
-      } catch (e) {
-        status.textContent = 'Не удалось скопировать автоматически — скопируйте вручную.';
-        console.error(e);
-      }
-    }
-    main();
-  </script>
+      <div id="status" class="status status--neutral" aria-live="polite">Готово к копированию…</div>
+
+      <div class="actions">
+        <button id="copyBtn" class="btn btn--primary" type="button">Скопировать ещё раз</button>
+        <a id="openInNew" class="btn" target="_blank" rel="noopener">Открыть в новом окне</a>
+      </div>
+
+      <pre id="preview" class="preview" tabindex="0">(пусто)</pre>
+
+      <footer class="footnote">
+        Если автокопирование не сработало из-за политики браузера, нажмите «Скопировать ещё раз».
+      </footer>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
 </body>
 </html>

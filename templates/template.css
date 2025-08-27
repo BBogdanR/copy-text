@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#payload {
+  white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 1em 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--card), transparent 6%);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#status {
+  font-size: 14px;
+  color: var(--muted);
+}

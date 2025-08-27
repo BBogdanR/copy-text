@@ -4,34 +4,107 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>Копирование текста</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet" />
+  <title>Шаблоны сообщений</title>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
   <main class="wrap">
-    <section class="card" role="region" aria-labelledby="title">
-      <header class="card__header">
-        <h1 id="title" class="title">Сообщение</h1>
-        <p class="subtitle">Эта страница автоматически копирует <strong>только текст ниже</strong>.</p>
-      </header>
+        <header class="header">
+      <h1>Шаблоны сообщений</h1>
+      <p class="lead">Выберите нужный шаблон. Страница шаблона содержит кнопку «Скопировать текст».</p>
+    </header>
 
-      <div id="status" class="status status--neutral" aria-live="polite">Готово к копированию…</div>
+    <section class="grid">
+      <!-- 1 -->
+      <article class="card">
+        <h3 class="card__title">— Роль Slowmode</h3>
+        <p class="card__desc">Уведомление о временном ограничении отправки сообщений (подозрительная активность).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/slowmode.html">Открыть шаблон</a>
+      </article>
 
-      <div class="actions">
-        <button id="copyBtn" class="btn btn--primary" type="button">Скопировать ещё раз</button>
-        <a id="openInNew" class="btn" target="_blank" rel="noopener">Открыть в новом окне</a>
-      </div>
+      <!-- 2 -->
+      <article class="card">
+        <h3 class="card__title">— Обжалование наказаний</h3>
+        <p class="card__desc">Информация о порядке обжалования наказаний (основной Discord-сервер).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/appeal-main-discord.html">Открыть шаблон</a>
+      </article>
 
-      <pre id="preview" class="preview" tabindex="0">(пусто)</pre>
+      <!-- 3 -->
+      <article class="card">
+        <h3 class="card__title">— Роли Novice / Prime Trader</h3>
+        <p class="card__desc">Информация о выдаче ролей за достижение уровней (автоматическая система).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/novice-prime-trader.html">Открыть шаблон</a>
+      </article>
 
-      <footer class="footnote">
-        Если автокопирование не сработало из-за политики браузера, нажмите «Скопировать ещё раз».
-      </footer>
+      <!-- 4 -->
+      <article class="card">
+        <h3 class="card__title">— Наказание</h3>
+        <p class="card__desc">Информация о проверке и деталях наказаний (личный кабинет).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/punishment-info.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 5 -->
+      <article class="card">
+        <h3 class="card__title">— Покупка организации</h3>
+        <p class="card__desc">Предупреждение о запрете покупки организаций с рук (разрешена только аренда).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/org-purchase.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 6 -->
+      <article class="card">
+        <h3 class="card__title">— Поиск услуг коллера</h3>
+        <p class="card__desc">Предупреждение о запрете услуг по прогнозированию ставок (правила проекта).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/caller-services.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 7 -->
+      <article class="card">
+        <h3 class="card__title">— Поиск кредитора «в долг»</h3>
+        <p class="card__desc">Предупреждение о запрете кредитования и займов под проценты (торговая площадка).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/creditor-loan.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 8 -->
+      <article class="card">
+        <h3 class="card__title">— Не видно каналы</h3>
+        <p class="card__desc">Инструкция по отображению категорий и каналов (просмотр каналов).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/not-seeing-channels.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 9 -->
+      <article class="card">
+        <h3 class="card__title">— MEE6 удаляет сообщения</h3>
+        <p class="card__desc">Информация об автоматическом удалении сообщений ботом (фильтр слов и повторов).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/mee6-deletes.html">Открыть шаблон</a>
+      </article>
+
+      <!-- 10 -->
+      <article class="card">
+        <h3 class="card__title">— Неправильная причина наказания</h3>
+        <p class="card__desc">Уведомление о корректировке причины наказания (уточнение модератора).</p>
+        <div class="spacer"></div>
+        <a class="btn" href="./templates/wrong-reason.html">Открыть шаблон</a>
+      </article>
+
+
+
     </section>
+
   </main>
 
-  <script src="./script.js" defer></script>
+  <footer class="footer">
+    <div class="footer__inner">
+      Шаблончики.
+    </div>
+  </footer>
 </body>
 </html>

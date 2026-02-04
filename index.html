@@ -1,284 +1,392 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
-  <title>Шаблоны сообщений</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Коллекция шаблонов сообщений для модераторов">
+  <title>Шаблоны сообщений - GTA5RP</title>
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="bg-gradient"></div>
-  <div class="bg-grid"></div>
-  <canvas id="particleCanvas"></canvas>
+  <div class="grain"></div>
   
-  <main class="wrap">
-    <header class="header">
-      <div class="header-badge">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-          <path d="M2 17L12 22L22 17"/>
-          <path d="M2 12L12 17L22 12"/>
-        </svg>
-        <span>Коллекция шаблонов</span>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M16 8v16M8 16h16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                <stop stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>Шаблоны</span>
+        </div>
       </div>
-      <h1 class="glitch" data-text="Шаблоны сообщений">Шаблоны сообщений</h1>
-      <p class="lead">Выберите нужный шаблон. Страница шаблона содержит кнопку «Скопировать текст».</p>
-    </header>
-
-    <section class="grid">
-      <!-- Card 1 -->
-      <article class="card" style="--delay: 0s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Роль Slowmode</h3>
-        <p class="card__desc">Уведомление о временном ограничении отправки сообщений (подозрительная активность).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/slowmode.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-label">Категории</div>
+          <a href="#all" class="nav-link active">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
             </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="card" style="--delay: 0.1s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 12l2 2 4-4"/>
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Обжалование наказаний</h3>
-        <p class="card__desc">Информация о порядке обжалования наказаний (основной Discord-сервер).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/appeal-main-discord.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
+            <span>Все шаблоны</span>
+            <span class="badge">10</span>
+          </a>
+          <a href="#moderation" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="card" style="--delay: 0.2s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Роли Novice / Prime Trader</h3>
-        <p class="card__desc">Информация о выдаче ролей за достижение уровней (автоматическая система).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/novice-prime-trader.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
+            <span>Модерация</span>
+          </a>
+          <a href="#info" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
             </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="card" style="--delay: 0.3s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 8v4M12 16h.01"/>
-          </svg>
+            <span>Информация</span>
+          </a>
         </div>
-        <h3 class="card__title">— Наказание</h3>
-        <p class="card__desc">Информация о проверке и деталях наказаний (личный кабинет).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/punishment-info.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+      </nav>
+    </aside>
 
-      <!-- Card 5 -->
-      <article class="card" style="--delay: 0.4s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <path d="M3 9h18"/>
-            <path d="M9 21V9"/>
-          </svg>
+    <main class="content">
+      <header class="content-header">
+        <div class="header-top">
+          <h1 class="page-title">Шаблоны сообщений</h1>
+          <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" title="Поиск (Ctrl+K)" aria-label="Открыть поиск">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+            </button>
+            <button class="icon-btn" id="themeToggle" title="Сменить тему" aria-label="Переключить тему">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+            </button>
+          </div>
         </div>
-        <h3 class="card__title">— Покупка организации</h3>
-        <p class="card__desc">Предупреждение о запрете покупки организаций с рук (разрешена только аренда).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/org-purchase.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+        
+        <p class="page-description">Выберите нужный шаблон. Страница шаблона содержит кнопку «Скопировать текст».</p>
 
-      <!-- Card 6 -->
-      <article class="card" style="--delay: 0.5s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Поиск услуг коллера</h3>
-        <p class="card__desc">Предупреждение о запрете услуг по прогнозированию ставок (правила проекта).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/caller-services.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+          <div class="view-toggle">
+            <button class="view-btn active" aria-label="Вид сеткой">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+              </svg>
+            </button>
+            <button class="view-btn" aria-label="Вид списком">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </button>
+          </div>
+      </header>
 
-      <!-- Card 7 -->
-      <article class="card" style="--delay: 0.6s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Поиск кредитора «в долг»</h3>
-        <p class="card__desc">Предупреждение о запрете кредитования и займов под проценты (торговая площадка).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/creditor-loan.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+      <div class="templates-grid">
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#001</span>
+            </div>
+          </div>
+          <h3 class="card-title">Роль Slowmode</h3>
+          <p class="card-description">Уведомление о временном ограничении отправки сообщений (подозрительная активность).</p>
+          <div class="card-footer">
+            <a href="./templates/slowmode.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
 
-      <!-- Card 8 -->
-      <article class="card" style="--delay: 0.7s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Не видно каналы</h3>
-        <p class="card__desc">Инструкция по отображению категорий и каналов (просмотр каналов).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/not-seeing-channels.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+        <article class="template-card" data-category="info">
+          <div class="card-header">
+            <div class="card-icon icon-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4"/>
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#002</span>
+            </div>
+          </div>
+          <h3 class="card-title">Обжалование наказаний</h3>
+          <p class="card-description">Информация о порядке обжалования наказаний (основной Discord-сервер).</p>
+          <div class="card-footer">
+            <a href="./templates/appeal-main-discord.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
 
-      <!-- Card 9 -->
-      <article class="card" style="--delay: 0.8s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— MEE6 удаляет сообщения</h3>
-        <p class="card__desc">Информация об автоматическом удалении сообщений ботом (фильтр слов и повторов).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/mee6-deletes.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
+        <article class="template-card" data-category="info">
+          <div class="card-header">
+            <div class="card-icon icon-accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#003</span>
+            </div>
+          </div>
+          <h3 class="card-title">Роли Novice / Prime Trader</h3>
+          <p class="card-description">Информация о выдаче ролей за достижение уровней (автоматическая система).</p>
+          <div class="card-footer">
+            <a href="./templates/novice-prime-trader.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
 
-      <!-- Card 10 -->
-      <article class="card" style="--delay: 0.9s">
-        <div class="card-shine"></div>
-        <div class="card-border"></div>
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <h3 class="card__title">— Неправильная причина наказания</h3>
-        <p class="card__desc">Уведомление о корректировке причины наказания (уточнение модератора).</p>
-        <div class="spacer"></div>
-        <a class="btn" href="./templates/wrong-reason.html">
-          <span class="btn-text">Открыть шаблон</span>
-          <span class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-          <span class="btn-shine"></span>
-        </a>
-      </article>
-    </section>
-  </main>
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-warning">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#004</span>
+            </div>
+          </div>
+          <h3 class="card-title">Наказание</h3>
+          <p class="card-description">Информация о проверке и деталях наказаний (личный кабинет).</p>
+          <div class="card-footer">
+            <a href="./templates/punishment-info.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <span class="footer-text">Шаблончики.</span>
-      <div class="footer-line"></div>
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#005</span>
+            </div>
+          </div>
+          <h3 class="card-title">Покупка организации</h3>
+          <p class="card-description">Предупреждение о запрете покупки организаций с рук (разрешена только аренда).</p>
+          <div class="card-footer">
+            <a href="./templates/org-purchase.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#006</span>
+            </div>
+          </div>
+          <h3 class="card-title">Поиск услуг коллера</h3>
+          <p class="card-description">Предупреждение о запрете услуг по прогнозированию ставок (правила проекта).</p>
+          <div class="card-footer">
+            <a href="./templates/caller-services.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-warning">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#007</span>
+            </div>
+          </div>
+          <h3 class="card-title">Поиск кредитора «в долг»</h3>
+          <p class="card-description">Предупреждение о запрете кредитования и займов под проценты (торговая площадка).</p>
+          <div class="card-footer">
+            <a href="./templates/creditor-loan.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="template-card" data-category="info">
+          <div class="card-header">
+            <div class="card-icon icon-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#008</span>
+            </div>
+          </div>
+          <h3 class="card-title">Не видно каналы</h3>
+          <p class="card-description">Инструкция по отображению категорий и каналов (просмотр каналов).</p>
+          <div class="card-footer">
+            <a href="./templates/not-seeing-channels.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="template-card" data-category="info">
+          <div class="card-header">
+            <div class="card-icon icon-accent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#009</span>
+            </div>
+          </div>
+          <h3 class="card-title">MEE6 удаляет сообщения</h3>
+          <p class="card-description">Информация об автоматическом удалении сообщений ботом (фильтр слов и повторов).</p>
+          <div class="card-footer">
+            <a href="./templates/mee6-deletes.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="template-card" data-category="moderation">
+          <div class="card-header">
+            <div class="card-icon icon-danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div class="card-meta">
+              <span class="card-id">#010</span>
+            </div>
+          </div>
+          <h3 class="card-title">Неправильная причина наказания</h3>
+          <p class="card-description">Уведомление о корректировке причины наказания (уточнение модератора).</p>
+          <div class="card-footer">
+            <a href="./templates/wrong-reason.html" class="card-link">
+              Открыть
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Поиск шаблонов..." autocomplete="off" aria-label="Поиск">
+        <kbd class="search-shortcut">Esc</kbd>
+      </div>
+      <div class="search-results" id="searchResults">
+        <div class="search-empty">Начните вводить для поиска...</div>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Модальное окно поиска -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Поиск шаблонов..." autocomplete="off">
+        <kbd class="search-shortcut">Esc</kbd>
+      </div>
+      <div class="search-results" id="searchResults">
+        <div class="search-empty">Начните вводить для поиска...</div>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
